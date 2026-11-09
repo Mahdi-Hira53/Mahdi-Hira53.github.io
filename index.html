@@ -3,6 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script>
+/* Auto-update: if the browser showed an old cached copy, fetch the latest and reload once. Runs only on GitHub Pages. */
+(async () => {
+  if (!/\.github\.io$/.test(location.hostname) || !window.fetch) return;
+  const url = location.pathname;
+  let flag = null;
+  try { flag = sessionStorage.getItem("site-refreshed"); } catch (e) {}
+  try {
+    const cached = await fetch(url, { cache: "force-cache" }).then(r => r.text());
+    const fresh = await fetch(url, { cache: "reload" }).then(r => r.text());
+    if (cached !== fresh && !flag) {
+      try { sessionStorage.setItem("site-refreshed", "1"); } catch (e) {}
+      location.reload();
+    } else if (cached === fresh) {
+      try { sessionStorage.removeItem("site-refreshed"); } catch (e) {}
+    }
+  } catch (e) {}
+})();
+</script>
 <title>Md. Mahdi Hossain Hira</title>
 <meta name="description" content="Md. Mahdi Hossain Hira, Lecturer (Adjunct) in CSE at Leading University, Sylhet. Research in machine learning, NLP, computer vision, LLMs and explainable AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
