@@ -196,6 +196,8 @@ section:first-child { border-top: 0; padding-top: 0; }
 .pub:first-child { border-top: 0; }
 .pub .yr { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
 .pub h3 { font-family: var(--font-body); font-size: 17px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; }
+.pub h3 a.pub-title { color: var(--ink); }
+.pub h3 a.pub-title:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .pub .authors { font-size: 14px; color: var(--muted); margin: 0 0 4px; }
 .pub .authors strong { color: var(--ink); font-weight: 600; }
 .pub .venue { font-size: 14px; font-style: italic; margin: 0 0 10px; }
@@ -367,7 +369,7 @@ footer { font: 12px var(--font-mono); color: var(--muted); padding-top: 40px; }
       <div class="stats">
         <div class="stat"><b id="stat-pub">4</b><small>Published papers</small></div>
         <div class="stat"><b id="stat-rev">3</b><small>Under review</small></div>
-        <div class="stat"><b>6</b><small>Courses taught</small></div>
+        <div class="stat"><b>10</b><small>Courses taught</small></div>
         <div class="stat"><b>3.81</b><small>B.Sc. CGPA / 4.00</small></div>
       </div>
     </section>
@@ -401,7 +403,7 @@ footer { font: 12px var(--font-mono); color: var(--muted); padding-top: 40px; }
           <div>
             <h3><span class="now" aria-hidden="true"></span>Lecturer (Adjunct)</h3>
             <p class="org">Department of CSE, Leading University · Sylhet · Part-time</p>
-            <ul><li>Teach six undergraduate CSE courses, from database systems to digital signal processing.</li></ul>
+            <ul><li>Teach ten undergraduate CSE courses and labs, from database systems to digital signal processing.</li></ul>
           </div>
         </li>
         <li>
@@ -443,12 +445,16 @@ footer { font: 12px var(--font-mono); color: var(--muted); padding-top: 40px; }
       <div class="sec-head"><span class="no">04</span><h2>Teaching</h2></div>
       <div class="prose" style="margin-bottom:24px"><p>Undergraduate courses taught at Leading University since July 2024.</p></div>
       <div class="courses">
-        <div class="course"><span>Mobile</span><b>Smartphone Applications Development</b></div>
-        <div class="course"><span>Data</span><b>Database Management System</b></div>
-        <div class="course"><span>Networks</span><b>Data Communication</b></div>
-        <div class="course"><span>Web</span><b>Web Technologies</b></div>
-        <div class="course"><span>Graphics</span><b>Computer Graphics</b></div>
-        <div class="course"><span>Signals</span><b>Digital Signal Processing</b></div>
+        <div class="course"><span>01 · Data · Theory</span><b>Database Management System</b></div>
+        <div class="course"><span>02 · Data · Lab</span><b>Database Management Sessional</b></div>
+        <div class="course"><span>03 · Networks · Theory</span><b>Data Communications</b></div>
+        <div class="course"><span>04 · Signals · Theory</span><b>Digital Signal Processing</b></div>
+        <div class="course"><span>05 · Graphics · Theory</span><b>Computer Graphics</b></div>
+        <div class="course"><span>06 · Graphics · Lab</span><b>Computer Graphics Sessional</b></div>
+        <div class="course"><span>07 · Programming · Theory</span><b>Computer Programming</b></div>
+        <div class="course"><span>08 · Web · Theory</span><b>Web Technologies</b></div>
+        <div class="course"><span>09 · Mobile · Theory</span><b>Smartphone Application Development</b></div>
+        <div class="course"><span>10 · Foundations · Theory</span><b>Basic Computer Applications</b></div>
       </div>
     </section>
 
@@ -527,24 +533,28 @@ footer { font: 12px var(--font-mono); color: var(--muted); padding-top: 40px; }
 const PUBS = [
   { year: 2026, status: "published", type: "journal",
     title: "BDRoad-Sense: A benchmark dataset for road surface detection and safety enhancement",
-    authors: "A. S. Mashrafi, M. A. S. Rabbi, P. Das, M. M. A. Jihan, M. M. H. Hira",
-    venue: "Data in Brief (Elsevier), vol. 66, 112893",
-    doi: "10.1016/j.dib.2026.112893", topics: "dataset computer vision road safety" },
+    authors: "A. S. Mashrafi, M. A. S. Rabbi, P. Das, M. M. A. Jihan, and M. M. H. Hira",
+    venue: "Data in Brief (Elsevier), vol. 66, Art. no. 112893, 2026",
+    doi: "10.1016/j.dib.2026.112893",
+    cite: "A. S. Mashrafi, M. A. S. Rabbi, P. Das, M. M. A. Jihan, and M. M. H. Hira, \u201cBDRoad-Sense: A benchmark dataset for road surface detection and safety enhancement,\u201d Data in Brief, vol. 66, Art. no. 112893, 2026. DOI: 10.1016/j.dib.2026.112893", topics: "dataset computer vision road safety" },
   { year: 2025, status: "published", type: "conference",
     title: "BanglaSportsEmotion: A Sports Focused Bangla Sentiment Corpus with Transformer and Classical Machine Learning Benchmarks",
-    authors: "S. P. Jisun, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, E. A. Rahe",
-    venue: "28th International Conference on Computer and Information Technology (ICCIT), IEEE, Cox's Bazar",
-    doi: "10.1109/ICCIT68739.2025.11491620", topics: "nlp bangla sentiment transformer corpus" },
+    authors: "S. P. Jisun, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, and E. A. Rahe",
+    venue: "Proc. 28th Int. Conf. on Computer and Information Technology (ICCIT), IEEE, Cox\u2019s Bazar, Bangladesh, 2025",
+    doi: "10.1109/ICCIT68739.2025.11491620",
+    cite: "S. P. Jisun, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, and E. A. Rahe, \u201cBanglaSportsEmotion: A sports-focused Bangla sentiment corpus with transformer and classical machine learning benchmarks,\u201d in Proc. 28th Int. Conf. on Computer and Information Technology (ICCIT), Cox\u2019s Bazar, Bangladesh, 2025. DOI: 10.1109/ICCIT68739.2025.11491620", topics: "nlp bangla sentiment transformer corpus" },
   { year: 2025, status: "published", type: "conference",
     title: "Deep Learning-Based Sentiment Analysis of Social Media and E-Commerce Reviews",
-    authors: "S. Sakib, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, S. Das",
-    venue: "4th International Conference on Computing and Machine Intelligence (ICMI), IEEE, MI, USA, pp. 1–5",
-    doi: "10.1109/ICMI65310.2025.11141034", topics: "nlp sentiment deep learning" },
+    authors: "S. Sakib, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, and S. Das",
+    venue: "Proc. 4th Int. Conf. on Computing and Machine Intelligence (ICMI), IEEE, Michigan, USA, 2025, pp. 1\u20135",
+    doi: "10.1109/ICMI65310.2025.11141034",
+    cite: "S. Sakib, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, and S. Das, \u201cDeep learning-based sentiment analysis of social media and e-commerce reviews,\u201d in Proc. 4th Int. Conf. on Computing and Machine Intelligence (ICMI), Michigan, USA, 2025, pp. 1\u20135. DOI: 10.1109/ICMI65310.2025.11141034", topics: "nlp sentiment deep learning" },
   { year: 2025, status: "published", type: "conference",
     title: "Deep Learning and Context-Aware Mobile Computing for Improved Academic Supervisory Processes",
-    authors: "N. Ali, I. Shorme, M. M. H. Hira, M. A. Munim, M. S. R. Kohinoor",
-    venue: "5th International Conference on Electrical and Electronics Engineering (ICEEE), Springer (Scopus), pp. 469–483",
-    doi: "10.1007/978-981-97-9112-5_28", topics: "mobile computing deep learning face recognition" },
+    authors: "N. Ali, I. Shorme, M. M. H. Hira, M. A. Munim, and M. S. R. Kohinoor",
+    venue: "Proc. 5th Int. Conf. on Electrical and Electronics Engineering (ICEEE), Springer, 2025, pp. 469\u2013483",
+    doi: "10.1007/978-981-97-9112-5_28",
+    cite: "N. Ali, I. Shorme, M. M. H. Hira, M. A. Munim, and M. S. R. Kohinoor, \u201cDeep learning and context-aware mobile computing for improved academic supervisory processes,\u201d in Proc. 5th Int. Conf. on Electrical and Electronics Engineering (ICEEE), Springer, 2025, pp. 469\u2013483. DOI: 10.1007/978-981-97-9112-5_28", topics: "mobile computing deep learning face recognition" },
   { year: null, status: "review", type: "review",
     title: "An Explainable AI-Based Framework for Multi-Class Road Surface Condition Classification Using Deep Learning and Grad-CAM",
     authors: "", venue: "Under review", doi: "", topics: "xai explainable grad-cam computer vision road" },
@@ -591,12 +601,12 @@ function renderPubs() {
     <li class="pub">
       <div class="yr">${p.year ?? "—"}</div>
       <div>
-        <h3>${esc(p.title)}</h3>
+        <h3>${p.doi ? `<a class="pub-title" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)}</h3>
         ${p.authors ? `<p class="authors">${boldMe(p.authors)}</p>` : ""}
         <p class="venue">${esc(p.venue)}</p>
         <div class="row">
           ${p.status === "review" ? `<span class="pill review">Under review</span>` : `<span class="pill">${p.type === "journal" ? "Journal" : "Conference"}</span>`}
-          ${p.doi ? `<a class="doi" href="https://doi.org/${p.doi}">doi:${p.doi} ↗</a>` : ""}
+          ${p.doi ? `<a class="doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">DOI: ${p.doi} ↗</a>` : ""}
           ${p.doi ? `<button class="copy-cite" type="button" data-i="${PUBS.indexOf(p)}">Copy citation</button>` : ""}
         </div>
       </div>
@@ -604,7 +614,7 @@ function renderPubs() {
   document.getElementById("pubs-empty").style.display = list.length ? "none" : "block";
   document.querySelectorAll(".copy-cite").forEach(b => b.addEventListener("click", () => {
     const p = PUBS[+b.dataset.i];
-    copy(`${p.authors} (${p.year}). ${p.title}. ${p.venue}. https://doi.org/${p.doi}`, "Citation copied");
+    copy(p.cite || `${p.authors}, \u201c${p.title},\u201d ${p.venue}. DOI: ${p.doi}`, "Citation copied");
   }));
 }
 
