@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md. Mahdi Hossain Hira</title>
+<meta name="description" content="Md. Mahdi Hossain Hira, Lecturer (Adjunct) in CSE at Leading University, Sylhet. Research in machine learning, NLP, computer vision, LLMs and explainable AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: an academic CV as a two-column page. A fixed index on the left, a single reading column on the right; metadata set in mono like a citation. */
+:root {
+  --bg: #f7f8f8;
+  --surface: #ffffff;
+  --ink: #15191c;
+  --muted: #5d676e;
+  --line: #dde2e5;
+  --accent: #1d5f7a;
+  --accent-soft: #e3eef2;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1315;
+    --surface: #161b1e;
+    --ink: #e7ecee;
+    --muted: #97a3aa;
+    --line: #273036;
+    --accent: #7fbfd8;
+    --accent-soft: #17303a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1315;
+  --surface: #161b1e;
+  --ink: #e7ecee;
+  --muted: #97a3aa;
+  --line: #273036;
+  --accent: #7fbfd8;
+  --accent-soft: #17303a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 400; }
+
+.shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 72px;
+}
+
+/* ---------- Index (left) ---------- */
+.index {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  padding: 56px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.monogram {
+  min-width: 56px; height: 56px; padding: 0 10px; justify-self: start; align-self: flex-start;
+  border: 1px solid var(--ink);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+.index nav ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.index nav a {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 14px;
+  transition: color .2s;
+}
+.index nav a span { font-family: var(--font-mono); font-size: 12px; padding-top: 2px; }
+.index nav a:hover { color: var(--ink); text-decoration: none; }
+.index nav a.active { color: var(--ink); }
+.index nav a.active span { color: var(--accent); }
+.index .meta { margin-top: auto; display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.index .meta a { color: var(--muted); }
+.index .meta a:hover { color: var(--accent); }
+.theme-btn {
+  justify-self: start;
+  margin-top: 10px;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: 500 12px var(--font-mono);
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.theme-btn:hover { color: var(--ink); border-color: var(--muted); }
+
+/* ---------- Content (right) ---------- */
+main { padding: 56px 0 96px; min-width: 0; }
+section { padding: 56px 0; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+section:first-child { border-top: 0; padding-top: 0; }
+.sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+.sec-head .no { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.sec-head h2 { font-family: var(--font-display); font-size: 34px; line-height: 1.1; letter-spacing: -0.01em; }
+
+/* Hero */
+.hero .role { font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: .02em; margin: 0 0 20px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7.4vw, 92px);
+  line-height: .95;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .lede { font-size: 19px; line-height: 1.55; max-width: 34em; margin: 0 0 28px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tags li {
+  font: 500 12.5px var(--font-mono);
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--surface);
+}
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat { padding: 18px 16px 16px 0; }
+.stat + .stat { padding-left: 16px; border-left: 1px solid var(--line); }
+.stat b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat small { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+
+/* About */
+.prose p { max-width: 38em; margin: 0 0 16px; }
+.prose p:last-child { margin-bottom: 0; }
+
+/* Publications */
+.pub-tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button {
+  font: 500 13px var(--font-body);
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.filters button:hover { color: var(--ink); border-color: var(--muted); }
+.filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.filters button .ct { font-family: var(--font-mono); font-size: 11px; margin-left: 4px; opacity: .7; }
+.search { position: relative; flex: 1 1 220px; max-width: 280px; }
+.search input {
+  width: 100%;
+  font: 14px var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.search input::placeholder { color: var(--muted); }
+.pubs { list-style: none; margin: 0; padding: 0; counter-reset: pub; }
+.pub {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 12px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.pub:first-child { border-top: 0; }
+.pub .yr { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.pub h3 { font-family: var(--font-body); font-size: 17px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; }
+.pub .authors { font-size: 14px; color: var(--muted); margin: 0 0 4px; }
+.pub .authors strong { color: var(--ink); font-weight: 600; }
+.pub .venue { font-size: 14px; font-style: italic; margin: 0 0 10px; }
+.pub .row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.pill { font: 500 11.5px var(--font-mono); padding: 2px 8px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.pill.review { background: transparent; color: var(--muted); border: 1px dashed var(--line); }
+.doi { font: 12.5px var(--font-mono); }
+.copy-cite {
+  font: 500 12px var(--font-mono);
+  background: none; border: 0; padding: 0; color: var(--muted); cursor: pointer;
+}
+.copy-cite:hover { color: var(--ink); }
+.empty { color: var(--muted); padding: 20px 0; display: none; }
+
+/* Experience timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.timeline li:first-child { border-top: 0; padding-top: 0; }
+.timeline .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.timeline h3 { font-family: var(--font-body); font-size: 17px; font-weight: 500; line-height: 1.4; }
+.timeline .org { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.timeline ul { margin: 0; padding-left: 18px; font-size: 15px; }
+.now { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 6px; vertical-align: 1px; }
+
+/* Teaching */
+.courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.course { background: var(--surface); padding: 16px 18px; display: grid; gap: 4px; }
+.course span { font: 12px var(--font-mono); color: var(--muted); }
+.course b { font-weight: 500; font-size: 15px; line-height: 1.4; }
+
+/* Projects */
+.projects { display: grid; gap: 0; }
+.project { border-top: 1px solid var(--line); }
+.project:first-child { border-top: 0; }
+.project button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+  text-align: left;
+  background: none; border: 0; padding: 18px 0; cursor: pointer;
+  color: var(--ink); font: inherit;
+}
+.project button h3 { font-family: var(--font-display); font-size: 26px; line-height: 1.15; }
+.project button .sub { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; }
+.project button .sign { font-family: var(--font-mono); font-size: 18px; color: var(--muted); transition: transform .25s; }
+.project[data-open="true"] .sign { transform: rotate(45deg); color: var(--accent); }
+.project .body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.project[data-open="true"] .body { grid-template-rows: 1fr; }
+.project .body > div { overflow: hidden; }
+.project .body ul { margin: 0 0 20px; padding-left: 18px; font-size: 15px; max-width: 40em; }
+.project .stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; padding: 0; list-style: none; }
+.project .stack li { font: 12px var(--font-mono); color: var(--muted); }
+.project .stack li + li::before { content: "/"; margin-right: 6px; color: var(--line); }
+
+/* Awards */
+.awards { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.awards li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding: 14px 0; border-top: 1px solid var(--line); }
+.awards li:first-child { border-top: 0; padding-top: 0; }
+.awards .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 2px; }
+.awards b { font-weight: 500; }
+.awards p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+
+/* Education */
+.edu { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; }
+
+/* Contact */
+.contact h2.big { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px; }
+.contact p { max-width: 34em; margin: 0 0 24px; color: var(--muted); }
+.contact-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.mail {
+  font: 500 15px var(--font-mono);
+  padding: 10px 14px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  color: var(--ink);
+  background: var(--surface);
+}
+.btn {
+  font: 500 14px var(--font-body);
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  cursor: pointer;
+}
+.btn.ghost { background: none; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--muted); text-decoration: none; }
+footer { font: 12px var(--font-mono); color: var(--muted); padding-top: 40px; }
+
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 12px);
+  background: var(--ink); color: var(--bg);
+  font: 500 13px var(--font-body);
+  padding: 8px 14px; border-radius: 6px;
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Small screens */
+@media (max-width: 880px) {
+  .shell { grid-template-columns: 1fr; gap: 0; padding: 0 20px; }
+  .index {
+    position: sticky; top: 0; z-index: 5; height: auto;
+    padding: 12px 0; gap: 12px;
+    flex-direction: row; align-items: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+  }
+  .monogram { min-width: 36px; height: 36px; padding: 0 7px; font-size: 17px; flex: none; align-self: center; }
+  .index nav { overflow-x: auto; scrollbar-width: none; flex: 1; }
+  .index nav ol { display: flex; gap: 16px; white-space: nowrap; }
+  .index nav a { display: inline; padding: 4px 0; }
+  .index nav a span { display: none; }
+  .index .meta { display: none; }
+  main { padding-top: 40px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 560px) {
+  .timeline li, .awards li, .edu { grid-template-columns: 1fr; gap: 4px; }
+  .pub { grid-template-columns: 1fr; gap: 4px; }
+  .search { max-width: none; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="index" aria-label="Sections">
+    <div class="monogram" aria-hidden="true">MHH</div>
+    <nav>
+      <ol>
+        <li><a href="#about"><span>01</span>About</a></li>
+        <li><a href="#research"><span>02</span>Research</a></li>
+        <li><a href="#experience"><span>03</span>Experience</a></li>
+        <li><a href="#teaching"><span>04</span>Teaching</a></li>
+        <li><a href="#projects"><span>05</span>Projects</a></li>
+        <li><a href="#awards"><span>06</span>Awards</a></li>
+        <li><a href="#contact"><span>07</span>Contact</a></li>
+      </ol>
+    </nav>
+    <div class="meta">
+      <span>Sylhet, Bangladesh</span>
+      <a href="https://www.linkedin.com/in/md-mahdi-hossain-hira/">LinkedIn ↗</a>
+      <span>bdmahdihira53@gmail.com</span>
+      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">Theme: auto</button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero" id="top" aria-label="Introduction">
+      <p class="role">Lecturer (Adjunct) · Dept. of CSE · Leading University, Sylhet</p>
+      <h1>Md. Mahdi<br>Hossain <em>Hira</em></h1>
+      <p class="lede">I research machine learning for language and vision, with a focus on low-resource Bangla NLP, trustworthy LLMs and explainable deep learning, and I teach undergraduate computer science.</p>
+      <ul class="tags" aria-label="Research interests">
+        <li>Machine Learning</li><li>Deep Learning</li><li>NLP</li><li>Computer Vision</li><li>Image Processing</li><li>LLMs</li><li>RAG</li><li>XAI</li>
+      </ul>
+      <div class="stats">
+        <div class="stat"><b id="stat-pub">4</b><small>Published papers</small></div>
+        <div class="stat"><b id="stat-rev">3</b><small>Under review</small></div>
+        <div class="stat"><b>6</b><small>Courses taught</small></div>
+        <div class="stat"><b>3.81</b><small>B.Sc. CGPA / 4.00</small></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="sec-head"><span class="no">01</span><h2>About</h2></div>
+      <div class="prose">
+        <p>I'm a Lecturer (Adjunct) in the Department of Computer Science and Engineering at Leading University, Sylhet. My research is in machine learning and deep learning, focusing on NLP, computer vision, large language models, retrieval-augmented generation (RAG) and explainable AI (XAI).</p>
+        <p>Before teaching, I was an undergraduate research assistant at InteX Research Lab. I also chaired the IEEE Computer Society Leading University Student Branch Chapter and received its Outstanding Leadership Volunteer Award 2024. I graduated in CSE from Leading University with a CGPA of 3.81/4.00.</p>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="sec-head"><span class="no">02</span><h2>Publications</h2></div>
+      <div class="pub-tools">
+        <div class="filters" role="group" aria-label="Filter publications" id="filters"></div>
+        <div class="search">
+          <label for="pub-search" class="sr" style="position:absolute;left:-9999px">Search publications</label>
+          <input id="pub-search" type="search" placeholder="Search title, venue or topic">
+        </div>
+      </div>
+      <ol class="pubs" id="pubs"></ol>
+      <p class="empty" id="pubs-empty">No publications match that search.</p>
+    </section>
+
+    <section id="experience">
+      <div class="sec-head"><span class="no">03</span><h2>Experience</h2></div>
+      <ol class="timeline">
+        <li>
+          <div class="when">Jul 2024 – Present</div>
+          <div>
+            <h3><span class="now" aria-hidden="true"></span>Lecturer (Adjunct)</h3>
+            <p class="org">Department of CSE, Leading University · Sylhet · Part-time</p>
+            <ul><li>Teach six undergraduate CSE courses, from database systems to digital signal processing.</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Oct 2023 – Jul 2024</div>
+          <div>
+            <h3>Undergraduate Research Assistant</h3>
+            <p class="org">InteX Research Lab · Sylhet</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Sep 2023 – Sep 2024</div>
+          <div>
+            <h3>Chair</h3>
+            <p class="org">IEEE Computer Society, Leading University Student Branch Chapter</p>
+            <ul><li>Led the chapter for a year; received the Outstanding Leadership Volunteer Award 2024.</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Sep 2022 – Sep 2023</div>
+          <div>
+            <h3>Logistic Executive</h3>
+            <p class="org">IEEE Computer Society, Leading University Student Branch Chapter</p>
+            <ul><li>Managed logistics for chapter events; received the Best Volunteer Award 2023.</li></ul>
+          </div>
+        </li>
+      </ol>
+
+      <div class="sec-head" style="margin-top:48px"><span class="no">03.1</span><h2>Education</h2></div>
+      <div class="edu">
+        <div class="timeline"><div class="when">Jan 2020 – Dec 2023</div></div>
+        <div>
+          <h3 style="font-size:17px;font-weight:500">B.Sc. in Computer Science and Engineering</h3>
+          <p class="org" style="color:var(--muted);font-size:14px;margin:2px 0 0">Leading University, Sylhet · CGPA 3.81 / 4.00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="sec-head"><span class="no">04</span><h2>Teaching</h2></div>
+      <div class="prose" style="margin-bottom:24px"><p>Undergraduate courses taught at Leading University since July 2024.</p></div>
+      <div class="courses">
+        <div class="course"><span>Mobile</span><b>Smartphone Applications Development</b></div>
+        <div class="course"><span>Data</span><b>Database Management System</b></div>
+        <div class="course"><span>Networks</span><b>Data Communication</b></div>
+        <div class="course"><span>Web</span><b>Web Technologies</b></div>
+        <div class="course"><span>Graphics</span><b>Computer Graphics</b></div>
+        <div class="course"><span>Signals</span><b>Digital Signal Processing</b></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-head"><span class="no">05</span><h2>Projects</h2></div>
+      <div class="projects" id="projects-list">
+        <div class="project" data-open="true">
+          <button type="button" aria-expanded="true" aria-controls="p1">
+            <span><h3>LU_Dissertation</h3><span class="sub">Thesis and project proposal management for the CSE department</span></span>
+            <span class="sign" aria-hidden="true">+</span>
+          </button>
+          <div class="body" id="p1"><div>
+            <ul>
+              <li>An app for submitting project and thesis proposals and evaluating them.</li>
+              <li>Built the proposal-submission features as part of the team.</li>
+              <li>Used by CSE faculty at Leading University for thesis and project submission and evaluation from Spring 2024 to Spring 2026.</li>
+            </ul>
+            <ul class="stack"><li>Team project</li><li>In production 2024–2026</li></ul>
+          </div></div>
+        </div>
+        <div class="project" data-open="false">
+          <button type="button" aria-expanded="false" aria-controls="p2">
+            <span><h3>Supervision</h3><span class="sub">Mobile app for thesis supervisors and students</span></span>
+            <span class="sign" aria-hidden="true">+</span>
+          </button>
+          <div class="body" id="p2"><div>
+            <ul>
+              <li>Lets supervisors and students communicate, share files, assign tasks and track attendance on theses and projects.</li>
+              <li>Records meeting attendance automatically with facial recognition.</li>
+            </ul>
+            <ul class="stack"><li>Mobile</li><li>Face recognition</li><li>Published at ICEEE 2025</li></ul>
+          </div></div>
+        </div>
+        <div class="project" data-open="false">
+          <button type="button" aria-expanded="false" aria-controls="p3">
+            <span><h3>FitSens</h3><span class="sub">Fitness and healthy-lifestyle tracker</span></span>
+            <span class="sign" aria-hidden="true">+</span>
+          </button>
+          <div class="body" id="p3"><div>
+            <ul>
+              <li>Progress tracking, heart-rate and water-intake monitoring, a diet planner, a sleep tracker and personalized workouts.</li>
+              <li>Built the social sharing, exercise progress tracking, sleep tracker and personalized workout features as part of the team.</li>
+            </ul>
+            <ul class="stack"><li>Mobile</li><li>Team project</li></ul>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="sec-head"><span class="no">06</span><h2>Awards &amp; certifications</h2></div>
+      <ol class="awards">
+        <li><div class="when">2024</div><div><b>Outstanding Leadership Volunteer Award</b><p>IEEE Computer Society, Leading University Student Branch Chapter</p></div></li>
+        <li><div class="when">2023</div><div><b>Best Volunteer Award</b><p>IEEE Computer Society, Leading University Student Branch Chapter</p></div></li>
+        <li><div class="when">Sep – Nov 2022</div><div><b>Bootcamp on Mobile Application Development with Flutter</b><p>Three-month course · IEEE Computer Society, Leading University Student Branch Chapter</p></div></li>
+      </ol>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="sec-head"><span class="no">07</span><h2>Contact</h2></div>
+      <h2 class="big">Open to research collaborations.</h2>
+      <p>For collaborations, supervision questions or teaching enquiries, email is the quickest way to reach me.</p>
+      <div class="contact-row">
+        <span class="mail" id="email">bdmahdihira53@gmail.com</span>
+        <button class="btn" type="button" id="copy-email">Copy email</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/md-mahdi-hossain-hira/">LinkedIn ↗</a>
+      </div>
+      <footer>© <span id="yr">2026</span> Md. Mahdi Hossain Hira · Sylhet, Bangladesh</footer>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const PUBS = [
+  { year: 2026, status: "published", type: "journal",
+    title: "BDRoad-Sense: A benchmark dataset for road surface detection and safety enhancement",
+    authors: "A. S. Mashrafi, M. A. S. Rabbi, P. Das, M. M. A. Jihan, M. M. H. Hira",
+    venue: "Data in Brief (Elsevier), vol. 66, 112893",
+    doi: "10.1016/j.dib.2026.112893", topics: "dataset computer vision road safety" },
+  { year: 2025, status: "published", type: "conference",
+    title: "BanglaSportsEmotion: A Sports Focused Bangla Sentiment Corpus with Transformer and Classical Machine Learning Benchmarks",
+    authors: "S. P. Jisun, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, E. A. Rahe",
+    venue: "28th International Conference on Computer and Information Technology (ICCIT), IEEE, Cox's Bazar",
+    doi: "10.1109/ICCIT68739.2025.11491620", topics: "nlp bangla sentiment transformer corpus" },
+  { year: 2025, status: "published", type: "conference",
+    title: "Deep Learning-Based Sentiment Analysis of Social Media and E-Commerce Reviews",
+    authors: "S. Sakib, M. J. U. Chowdhury, M. M. H. Hira, T. E. Choudhury, S. Das",
+    venue: "4th International Conference on Computing and Machine Intelligence (ICMI), IEEE, MI, USA, pp. 1–5",
+    doi: "10.1109/ICMI65310.2025.11141034", topics: "nlp sentiment deep learning" },
+  { year: 2025, status: "published", type: "conference",
+    title: "Deep Learning and Context-Aware Mobile Computing for Improved Academic Supervisory Processes",
+    authors: "N. Ali, I. Shorme, M. M. H. Hira, M. A. Munim, M. S. R. Kohinoor",
+    venue: "5th International Conference on Electrical and Electronics Engineering (ICEEE), Springer (Scopus), pp. 469–483",
+    doi: "10.1007/978-981-97-9112-5_28", topics: "mobile computing deep learning face recognition" },
+  { year: null, status: "review", type: "review",
+    title: "An Explainable AI-Based Framework for Multi-Class Road Surface Condition Classification Using Deep Learning and Grad-CAM",
+    authors: "", venue: "Under review", doi: "", topics: "xai explainable grad-cam computer vision road" },
+  { year: null, status: "review", type: "review",
+    title: "When the Coach is Unsafe: The Base Model, Not Retrieval, Set the Safety of LLM Dietary Advice",
+    authors: "", venue: "Under review", doi: "", topics: "llm rag safety" },
+  { year: null, status: "review", type: "review",
+    title: "Focentra: Adaptive Productivity-Archetype Profiling for Students with a Personality-Informed Cold Start",
+    authors: "", venue: "Under review", doi: "", topics: "machine learning profiling students" }
+];
+
+const FILTERS = [
+  { id: "all", label: "All", test: () => true },
+  { id: "journal", label: "Journal", test: p => p.type === "journal" },
+  { id: "conference", label: "Conference", test: p => p.type === "conference" },
+  { id: "review", label: "Under review", test: p => p.status === "review" }
+];
+
+let current = "all";
+try { current = localStorage.getItem("pubFilter") || "all"; } catch (e) {}
+if (!FILTERS.some(f => f.id === current)) current = "all";
+
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const boldMe = a => esc(a).replace("M. M. H. Hira", "<strong>M. M. H. Hira</strong>");
+
+function renderFilters() {
+  const box = document.getElementById("filters");
+  box.innerHTML = FILTERS.map(f => {
+    const n = PUBS.filter(f.test).length;
+    return `<button type="button" id="f-${f.id}" data-f="${f.id}" aria-pressed="${f.id === current}">${f.label}<span class="ct">${n}</span></button>`;
+  }).join("");
+  box.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    current = b.dataset.f;
+    try { localStorage.setItem("pubFilter", current); } catch (e) {}
+    renderFilters(); renderPubs();
+  }));
+}
+
+function renderPubs() {
+  const q = document.getElementById("pub-search").value.trim().toLowerCase();
+  const f = FILTERS.find(x => x.id === current);
+  const list = PUBS.filter(f.test).filter(p => !q || (p.title + " " + p.venue + " " + p.authors + " " + p.topics).toLowerCase().includes(q));
+  document.getElementById("pubs").innerHTML = list.map((p, i) => `
+    <li class="pub">
+      <div class="yr">${p.year ?? "—"}</div>
+      <div>
+        <h3>${esc(p.title)}</h3>
+        ${p.authors ? `<p class="authors">${boldMe(p.authors)}</p>` : ""}
+        <p class="venue">${esc(p.venue)}</p>
+        <div class="row">
+          ${p.status === "review" ? `<span class="pill review">Under review</span>` : `<span class="pill">${p.type === "journal" ? "Journal" : "Conference"}</span>`}
+          ${p.doi ? `<a class="doi" href="https://doi.org/${p.doi}">doi:${p.doi} ↗</a>` : ""}
+          ${p.doi ? `<button class="copy-cite" type="button" data-i="${PUBS.indexOf(p)}">Copy citation</button>` : ""}
+        </div>
+      </div>
+    </li>`).join("");
+  document.getElementById("pubs-empty").style.display = list.length ? "none" : "block";
+  document.querySelectorAll(".copy-cite").forEach(b => b.addEventListener("click", () => {
+    const p = PUBS[+b.dataset.i];
+    copy(`${p.authors} (${p.year}). ${p.title}. ${p.venue}. https://doi.org/${p.doi}`, "Citation copied");
+  }));
+}
+
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 1800);
+}
+async function copy(text, okMsg) {
+  try { await navigator.clipboard.writeText(text); toast(okMsg); }
+  catch (e) { toast("Couldn't copy. Select the text and copy it manually."); }
+}
+
+document.getElementById("pub-search").addEventListener("input", renderPubs);
+document.getElementById("copy-email").addEventListener("click", () => copy("bdmahdihira53@gmail.com", "Email copied"));
+document.getElementById("stat-pub").textContent = PUBS.filter(p => p.status === "published").length;
+document.getElementById("stat-rev").textContent = PUBS.filter(p => p.status === "review").length;
+
+/* Projects accordion */
+document.querySelectorAll(".project button").forEach(btn => btn.addEventListener("click", () => {
+  const card = btn.closest(".project");
+  const open = card.dataset.open !== "true";
+  card.dataset.open = open; btn.setAttribute("aria-expanded", open);
+}));
+
+/* Section highlight in the index */
+const links = [...document.querySelectorAll(".index nav a")];
+const map = new Map(links.map(a => [a.getAttribute("href").slice(1), a]));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove("active"));
+      const a = map.get(e.target.id); if (a) a.classList.add("active");
+    }
+  });
+}, { rootMargin: "-30% 0px -60% 0px" });
+document.querySelectorAll("main section[id]").forEach(s => io.observe(s));
+
+/* Theme: auto → light → dark */
+const root = document.documentElement;
+const order = ["auto", "light", "dark"];
+let theme = "auto";
+try { theme = localStorage.getItem("theme") || "auto"; } catch (e) {}
+function applyTheme() {
+  if (theme === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", theme);
+  document.getElementById("theme-toggle").textContent = "Theme: " + theme;
+}
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  theme = order[(order.indexOf(theme) + 1) % order.length];
+  try { localStorage.setItem("theme", theme); } catch (e) {}
+  applyTheme();
+});
+if (theme !== "auto") applyTheme(); else document.getElementById("theme-toggle").textContent = "Theme: auto";
+
+renderFilters(); renderPubs();
+</script>
+</body>
+</html>
